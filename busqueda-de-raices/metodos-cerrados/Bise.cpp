@@ -2,25 +2,24 @@
 #include <math.h>
 #include <fstream>
 
-
 using namespace std;
 
 double f(double num);
 
-
-
 int main(){
-    double a;
-    double b;
-    double x;
-    double e;
+    //declracion de variables limites del intervalo, error, raiz y contador de iteraciones
+    double a=0;
+    double b=0;
+    double x=0;
+    double e=0;
+
     ofstream fs("Resultado.txt");
+    
     int contador =0;
     double resultado;
     double c;
     bool ver=true; 
-    cout<<"Ingrese el intervalo"<<endl;
-    cout<<"----------------------------"<<endl;
+    cout<<"-----Intervalo a analizar-----"<<endl;
     cout<<"Ingrese el primer valor del intervalo (valor a)"<<endl;
     cin>>a;
     cout<<"Ingrese el segundo valor del intervalo (valor b)"<<endl;
