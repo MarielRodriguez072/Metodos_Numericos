@@ -14,7 +14,7 @@ int main(){
     double e=0;
 
     ofstream fs("Resultado.txt");
-    
+
     int contador =0;
     double resultado;
     double c;
@@ -75,7 +75,7 @@ int main(){
             b=c;
         }
         
-        cout<<contador<<") "<<fabs(f(c))<<endl;
+        cout<<contador<<") "<<fabs(f(c))<<endl; 
         fs<<contador<<") "<<fabs(f(c))<<endl;
 
     }while (fabs(f(c))>e);
@@ -88,7 +88,7 @@ int main(){
     //system("pause");
     return 0;
 }
-
+//Funcion que define la ecuacion a evaluar
 double f(double x){
     return -2 + (7*x) - (5 * pow(x,2)) + (6 * pow(x,3));
     
