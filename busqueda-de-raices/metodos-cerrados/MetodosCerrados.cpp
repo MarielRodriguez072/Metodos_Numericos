@@ -12,8 +12,7 @@ double puntoMedioB(double a, double b);
 double puntoMedioR(double a, double b);
 
 int main(){
-    int metodo;
-    int funcion;
+    int metodo=0;
     double a=0;
     double b=0;
     double e=0;
