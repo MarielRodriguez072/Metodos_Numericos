@@ -27,7 +27,9 @@ También llamados de *acotamiento* o *intervalos*. Parten de un intervalo `[a, b
 - **Bisección:** Divide el intervalo a la mitad (`c = (a + b) / 2`) y conserva la mitad donde ocurre el cambio de signo, repitiendo el proceso hasta alcanzar el error deseado. Es el método más simple y robusto.
 - **Regula Falsi (falsa posición):** Similar a la bisección, pero en lugar del punto medio usa la intersección de la recta que une los puntos `(a, f(a))` y `(b, f(b))` con el eje *x*. Converge más rápido que la bisección en la mayoría de los casos.
 
-**Archivos:** `busqueda-de-raices/metodos-cerrados/Bise.cpp`, `BiseRegula.cpp`
+Ambos métodos están unificados en un único programa: al ejecutarlo se elige el método (bisección o regula falsi) y se ingresa el intervalo `[a, b]` y el error `e`. La función a la que se le buscan las raíces está definida (hardcodeada) en la función `f(x)` del código.
+
+**Archivo:** `busqueda-de-raices/metodos-cerrados/MetodosCerrados.cpp`
 
 #### Métodos abiertos
 
@@ -72,9 +74,8 @@ Metodos_Numericos/
 ├── README.md
 └── busqueda-de-raices/
     ├── metodos-cerrados/
-    │   ├── Bise.cpp            # Método de bisección
-    │   ├── BiseRegula.cpp      # Bisección y Regula Falsi
-    │   └── Resultado.txt       # Salida de ejemplo
+    │   ├── MetodosCerrados.cpp   # Bisección y Regula Falsi en un solo programa
+    │   └── Resultado.txt         # Salida de ejemplo
     └── metodos-abiertos/
         ├── puntoFijo.cpp       # Método de punto fijo
         ├── newtonRapson.cpp    # Método de Newton-Raphson
@@ -87,11 +88,11 @@ Los programas están escritos en C++ y se compilan con un compilador estándar:
 
 ```bash
 # Compilar
-g++ busqueda-de-raices/metodos-cerrados/Bise.cpp -o Bise
+g++ busqueda-de-raices/metodos-cerrados/MetodosCerrados.cpp -o metodos-cerrados
 g++ busqueda-de-raices/metodos-abiertos/newtonRapson.cpp -o newton
 
 # Ejecutar
-./Bise
+./metodos-cerrados
 ./newton
 ```
 
