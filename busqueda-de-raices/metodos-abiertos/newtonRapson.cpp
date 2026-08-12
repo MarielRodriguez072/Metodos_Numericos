@@ -9,10 +9,10 @@ double funcion(double x)
   return -x + 2;
 }
 
-double derivada(double x)
+double derivada(double x) 
 {
   double h = 0.000001;
-  return ((funcion(x + h) - funcion(x)) / h);
+  return ((funcion(x + h) - funcion(x)) / h); //o meter a mano  la derivada de la funcion.
 }
 
 int main()
@@ -43,9 +43,9 @@ int main()
 
       iteracion++;
 
-      error = (fabs(xp - x) / fabs(xp)); //Error absoluto
-      // error porcentual = error exacto * 100 /raiz 
-      //error = pow((xp-x),2) / pow(x,2);    //Error relativo
+      error = (fabs(xp - x) / fabs(xp)); //Error absoluto relaivo a xp
+      // error porcentual = error  * 100; //si  me piden el error exacto es solo el fabs(xp-x)/fabs(xp) y si me piden el error porcentual es el mismo error * 100
+      //error = pow((xp-x),2) / pow(x,2);    //Error relativo solo
 
       if (iteracion == 1000)
       {
