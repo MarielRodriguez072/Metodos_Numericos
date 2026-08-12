@@ -33,10 +33,10 @@ Ambos métodos están unificados en un único programa: al ejecutarlo se elige e
 
 #### Métodos abiertos
 
-Requieren uno o dos valores iniciales **cercanos a la raíz**, pero no necesitan que la función cambie de signo. Son mucho más rápidos cuando convergen, pero **pueden divergir** si el punto inicial es malo.
+Requieren uno o dos valores iniciales no necesariamente que cerca de la raíz. Cuando convergen lo hacen más rápido que los métodos cerrados, pero **pueden divergir** si no se tienen algunas consideraciones.
 
 - **Punto fijo:** Reescribe la ecuación `f(x) = 0` como `x = g(x)` y genera una sucesión `x_{n+1} = g(x_n)`. Converge si `|g'(x)| < 1` en la vecindad de la raíz.
-- **Newton-Raphson:** Usa la recta tangente a la curva: `x_{n+1} = x_n - f(x_n) / f'(x_n)`. Converge cuadráticamente si el valor inicial es adecuado; requiere calcular (o aproximar) la derivada.
+- **Newton-Raphson:** Usa la recta tangente a la curva: `x_{n+1} = x_n - f(x_n) / f'(x_n)`. Converge cuadráticamente si el valor inicial es adecuado; requiere calcular la derivada.
 - **Secante:** Aproxima la derivada de Newton-Raphson con una diferencia finita usando los dos últimos puntos, evitando calcular la derivada analíticamente. Convergencia más rápida que el punto fijo pero más lenta que Newton.
 
 **Archivos:** `busqueda-de-raices/metodos-abiertos/puntoFijo.cpp`, `newtonRapson.cpp`, `secante.cpp`
