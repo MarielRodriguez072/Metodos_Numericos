@@ -89,5 +89,5 @@ double g(double x){
 double derivada(double x){
   double h = 0.00001;
   //return (g(x + h) - g(x - h)) / (2*h); // derivada de g(x) por diferencia central, más precisa.
-  return (g(x + h) - g(x)) / h; // derivada de g(x) por diferencia hacia adelante, la que nos da la profe
+  return (g(x + h) - g(x)) / h; // la vista en clases, derivada de g(x) por diferencia hacia adelante
 }

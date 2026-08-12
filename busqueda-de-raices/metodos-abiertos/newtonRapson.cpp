@@ -49,7 +49,7 @@ int main()
 
       if (iteracion == 1000)
       {
-        cout << "No se ha encontrado raices, inicie con otro intervalo o un menor error" << endl;
+        cout << "No se ha encontrado raices, inicie con otro valor o un menor error" << endl;
         exit(EXIT_FAILURE);
       }
 
