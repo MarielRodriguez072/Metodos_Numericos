@@ -1,4 +1,10 @@
 *.exe
 *.out
+*.txt
 
 busqueda-de-raices/**/MetodosCerrados
+
+# Ejecutables Linux compilados (sin extension)
+Prueba
+ptofijo
+puntoPrueba
