@@ -18,17 +18,20 @@ double derivada(double x)
 int main()
 {
 
-  int pasos = 0;
+  int iteracion = 0;
 
-  double epsilon, xp, x, error;
+  double tolerancia = 0;
+  double xp = 0;
+  double x = 0;
+  double error = 0;
 
   cout << "Ingrese el X inicial" << endl;
 
   cin >> x;
 
-  cout << "Ingrese el valor de epsilon" << endl;
+  cout << "Ingrese el valor de la tolerancia" << endl;
 
-  cin >> epsilon;
+  cin >> tolerancia;
 
   do
   {
@@ -36,15 +39,15 @@ int main()
     xp = (x - (funcion(x) / derivada(x)));
 
     if (derivada(xp) < 1)
-    { //Si el resultado de la derivada esta a la izquierda pongo <, de lo contrario pongo menor;
+    { 
 
-      pasos++;
+      iteracion++;
 
       error = (fabs(xp - x) / fabs(xp)); //Error absoluto
-      // error porcentual = error exacto * 100 /raiz
+      // error porcentual = error exacto * 100 /raiz 
       //error = pow((xp-x),2) / pow(x,2);    //Error relativo
 
-      if (pasos == 1000)
+      if (iteracion == 1000)
       {
         cout << "No se ha encontrado raices, inicie con otro intervalo o un menor error" << endl;
         exit(EXIT_FAILURE);
@@ -55,13 +58,13 @@ int main()
     else
     {
 
-      cout << "Error de convergencia, inicie con otro epsilon mayor" << endl;
+      cout << "Error de convergencia, inicie con una tolerancia mayor" << endl;
       exit(EXIT_FAILURE);
     }
 
-  } while (error > epsilon);
+  } while (error > tolerancia);
 
-  cout << " La raiz es " << x << "\n numero de pasos : " << pasos << "\n con un error : " << error << endl;
+  cout << " La raiz es " << x << "\n numero de iteraciones realizadas: " << iteracion << "\n con un error : " << error << endl;
 
   return 0;
 }

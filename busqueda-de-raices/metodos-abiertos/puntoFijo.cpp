@@ -79,15 +79,15 @@ int main(int argc, char const *argv[]){
 // funcion original
 double f(double x){
   return 3*x+sin(x)-exp(x); //3x+sen(x)-e^x-----> 3x= -sen(x) + e^x-----> x= (-sen(x) + e^x)/3-------> [-1(sen(x)-e^x)]/3
-  //return pow(x,2)+ x - 4;
+  
 }
-// despeje
+// despeje de la funcion original
 double g(double x){
   return -1*(sin(x)-exp(x))/3;
-  //return 4 - pow(x,2);
 }
-// derivada de g(x) por diferencia central (mas precisa que la hacia adelante)
+// derivada de g(x) 
 double derivada(double x){
   double h = 0.00001;
-  return (g(x + h) - g(x - h)) / (2*h);
+  //return (g(x + h) - g(x - h)) / (2*h); // derivada de g(x) por diferencia central, más precisa.
+  return (g(x + h) - g(x)) / h; // derivada de g(x) por diferencia hacia adelante, la que nos da la profe
 }
