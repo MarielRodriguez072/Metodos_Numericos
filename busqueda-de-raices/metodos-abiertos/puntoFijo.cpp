@@ -34,7 +34,10 @@ int main(int argc, char const *argv[]){
     cout<<"Error: "<<error<<endl;
    
   }
+  cout<<"************************"<<endl;
+  cout<<"Cantidad total de iteraciones: "<<iteracion<<endl;
   cout << "La Raiz es: " << x << endl;
+  cout<<"************************"<<endl;
   return 0;
 }
 
