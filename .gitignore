@@ -8,3 +8,9 @@ busqueda-de-raices/**/MetodosCerrados
 Prueba
 ptofijo
 puntoPrueba
+eg
+gs
+eliPrueba
+
+# Archivos de datos de entrada (el usuario los modifica)
+resolucion-sist-ecuaciones/datos/*.dat

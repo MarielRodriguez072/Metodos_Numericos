@@ -9,14 +9,9 @@ using namespace std;
 
 int main(int argc, char const *argv[]){
 
-  char srcDir[PATH_MAX];
-  strncpy(srcDir, __FILE__, sizeof(srcDir));
-  srcDir[sizeof(srcDir)-1] = '\0';
-  dirname(srcDir);
-
-  #include "lectura_escritura_datos.c"
+  #include "../../lectura_escritura_datos.c"
   double b[filas];
-  #include "lectura_escritura_datos_ideptes.c"
+  #include "../../lectura_escritura_datos_ideptes.c"
   double epsilon = 0.001;
   double e = 1;
   double xv[filas];

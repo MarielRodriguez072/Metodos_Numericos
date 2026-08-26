@@ -1,7 +1,13 @@
 
     FILE *fd;
+
+    char dataDirInd[PATH_MAX];
+    strncpy(dataDirInd, __FILE__, sizeof(dataDirInd));
+    dataDirInd[sizeof(dataDirInd)-1] = '\0';
+    dirname(dataDirInd);
+
     char filePathInd[PATH_MAX];
-    snprintf(filePathInd, sizeof(filePathInd), "%s/../../datos/matrizIndep.dat", srcDir);
+    snprintf(filePathInd, sizeof(filePathInd), "%s/datos/matrizIndep.dat", dataDirInd);
     fd = fopen(filePathInd,"r");
     if ( fd == NULL )
     {
