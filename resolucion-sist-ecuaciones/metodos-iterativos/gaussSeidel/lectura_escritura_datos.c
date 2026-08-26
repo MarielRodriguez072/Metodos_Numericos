@@ -1,16 +1,18 @@
 
     FILE *fp;
     char ch;
-    fp = fopen("matriz.dat","r");
+    char filePath[PATH_MAX];
+    snprintf(filePath, sizeof(filePath), "%s/../../datos/matriz.dat", srcDir);
+    fp = fopen(filePath,"r");
     if ( fp == NULL )
     {
-        puts ( "No se puede abrir el archivo");
+        puts ( "No se puede abrir el archivo matriz.dat");
+        return 1;
     }
 
     //contador de filas
     int filas=0;
     char c;
-    int maxValues = 0;
 	int columnas;
     
     while((c = fgetc(fp)) != EOF)
@@ -24,7 +26,7 @@
 
     //cerramos y reabrimos el archivo para resetear el puntero
     fclose(fp);
-    fp = fopen("matriz.dat","r");
+    fp = fopen(filePath,"r");
     double m[filas][1000];
 
 
@@ -53,19 +55,5 @@
    		printf("\n");        
 	}
 
-	
-	//ejemplo de como escribir en archivo
-	/*
-	    FILE * file;
-        file= fopen("matriz_1.dat", "w");
-		
-      for(i=0;i<3;i++){
-            fprintf(file, "%lf	%lf	%lf	%lf\n", m[i][0],m[i][1],m[i][2],m[i][3]);
-        }
-        
-      */  
-	
-
-        
- 
+    fclose(fp);
 

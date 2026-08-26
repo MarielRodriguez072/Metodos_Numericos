@@ -1,9 +1,12 @@
 
     FILE *fd;
-    fd = fopen("matrizIndep.dat","r");
+    char filePathInd[PATH_MAX];
+    snprintf(filePathInd, sizeof(filePathInd), "%s/../../datos/matrizIndep.dat", srcDir);
+    fd = fopen(filePathInd,"r");
     if ( fd == NULL )
     {
-        puts ( "No se puede abrir el archivo");
+        puts ( "No se puede abrir el archivo matrizIndep.dat");
+        return 1;
     }
 
     //Cargo los datos leidos en el array
@@ -22,19 +25,5 @@
    		printf("\n");        
 	}
 
-	
-	//ejemplo de como escribir en archivo
-	/*
-	    FILE * file;
-        file= fopen("matriz_1.dat", "w");
-		
-      for(i=0;i<3;i++){
-            fprintf(file, "%lf	%lf	%lf	%lf\n", m[i][0],m[i][1],m[i][2],m[i][3]);
-        }
-        
-      */  
-	
-
-        
- 
+    fclose(fd);
 

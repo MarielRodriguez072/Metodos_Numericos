@@ -1,9 +1,18 @@
 #include <iostream>
 #include <cmath>
+#include <cstdio>
+#include <limits.h>
+#include <libgen.h>
+#include <cstring>
 
 using namespace std;
 
 int main(int argc, char const *argv[]){
+
+  char srcDir[PATH_MAX];
+  strncpy(srcDir, __FILE__, sizeof(srcDir));
+  srcDir[sizeof(srcDir)-1] = '\0';
+  dirname(srcDir);
 
   #include "lectura_escritura_datos.c"
   double b[filas];
@@ -54,15 +63,14 @@ int main(int argc, char const *argv[]){
         xv[i] = xn[i];
     }
 
-    i++;
+    iteracion++;
   }
 
   cout << endl << "----- Soluciones -----" << endl;
-  cout << "numeros de iteraciones " << i << endl;
+  cout << "numeros de iteraciones " << iteracion << endl;
  	for(int i =0; i<=filas-1; i++)
  		cout << endl << "x["<< i+1 << "]= " << xn[i];
  	cout << endl;
 
   return 0;
 }
-
