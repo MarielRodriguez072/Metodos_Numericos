@@ -1,10 +1,13 @@
 
     FILE *fp;
     char ch;
-    fp = fopen("matriz.dat","r");
+    char filePath[PATH_MAX];
+    snprintf(filePath, sizeof(filePath), "%s/matriz.dat", srcDir);
+    fp = fopen(filePath,"r");
     if ( fp == NULL )
     {
-        puts ( "No se puede abrir el archivo");
+        puts ( "No se puede abrir el archivo matriz.dat");
+        return 1;
     }
 
     //contador de filas
@@ -24,7 +27,7 @@
 
     //cerramos y reabrimos el archivo para resetear el puntero
     fclose(fp);
-    fp = fopen("matriz.dat","r");
+    fp = fopen(filePath,"r");
     double m[filas][1000];
 
 

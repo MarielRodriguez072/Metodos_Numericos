@@ -3,6 +3,8 @@
 #include <float.h>
 #include <math.h>
 #include <iostream>
+#include <libgen.h>
+#include <cstring>
 
 /*
 * Universidad: IUA - Ing. Informatica
@@ -15,6 +17,10 @@ using namespace std;
 
 int main(void)
 {
+    char srcDir[PATH_MAX];
+    strncpy(srcDir, __FILE__, sizeof(srcDir));
+    srcDir[sizeof(srcDir)-1] = '\0';
+    dirname(srcDir);
 
     #include"lectura_escritura_datos.c"
     double b[filas];

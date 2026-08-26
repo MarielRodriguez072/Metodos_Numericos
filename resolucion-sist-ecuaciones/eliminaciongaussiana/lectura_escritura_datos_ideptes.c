@@ -1,9 +1,12 @@
 
     FILE *fd;
-    fd = fopen("matrizIndep.dat","r");
+    char filePathInd[PATH_MAX];
+    snprintf(filePathInd, sizeof(filePathInd), "%s/matrizIndep.dat", srcDir);
+    fd = fopen(filePathInd,"r");
     if ( fd == NULL )
     {
-        puts ( "No se puede abrir el archivo");
+        puts ( "No se puede abrir el archivo matrizIndep.dat");
+        return 1;
     }
 
     //Cargo los datos leidos en el array
