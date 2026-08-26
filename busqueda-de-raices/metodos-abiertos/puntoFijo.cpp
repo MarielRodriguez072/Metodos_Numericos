@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+#define MAX_ITER 1000
 
 using namespace std;
 
@@ -15,7 +16,6 @@ int main(int argc, char const *argv[]){
   double error = 0;
   double errorMinimo = 0;
   int iteracion = 0;
-  const int MAX_ITER = 1000;
 
   cout << "Ingrese el valor inicial: " << endl;
   cin >> a;
